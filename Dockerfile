@@ -61,7 +61,7 @@ RUN set -ex \
 
 # Install Atlassian JIRA
 RUN set -ex \
-    && ARCHIVE="`mktemp --suffix=tar.gz`" \
+    && ARCHIVE="`mktemp --suffix=.tar.gz`" \
     && curl -skL $JIRA_DOWNLOAD_URL > $ARCHIVE \
     && mkdir -p $JIRA_CATALINA \
     && tar zxf $ARCHIVE --strip-components=1 -C $JIRA_CATALINA \

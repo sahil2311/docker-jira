@@ -76,8 +76,7 @@ RUN set -ex \
 # Copy files
 COPY files /
 
-# Ensure required folders exist with correct owner:group and permission
+# Ensure required folders exist with correct owner:group
 RUN set -ex \
     && mkdir -p $JIRA_HOME $JIRA_CATALINA \
-    && chown -Rf $JIRA_OWNER:$JIRA_GROUP $JIRA_HOME $JIRA_CATALINA \
-    && chmod -Rf 0755 $JIRA_HOME $JIRA_CATALINA
+    && chown -Rf $JIRA_OWNER:$JIRA_GROUP $JIRA_HOME $JIRA_CATALINA

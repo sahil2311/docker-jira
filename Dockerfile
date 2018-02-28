@@ -65,7 +65,7 @@ RUN set -ex \
     && ARCHIVE="`mktemp --suffix=tar.gz`" \
     && curl -skL $JIRA_DOWNLOAD_URL > $ARCHIVE \
     && mkdir -p $JIRA_CATALINA \
-    && tar zxvf $ARCHIVE --strip-components=1 -C $JIRA_CATALINA \
+    && tar zxf $ARCHIVE --strip-components=1 -C $JIRA_CATALINA \
     && chown -Rf $JIRA_OWNER:$JIRA_GROUP $JIRA_CATALINA \
     && rm -rf $ARCHIVE
 

@@ -9,7 +9,7 @@ script:
   - docker login -u="$DOCKER_USERNAME" -p="$DOCKER_PASSWORD"
   - docker version
   - docker info
-  - travis_retry docker build -t "$TRAVIS_REPO_SLUG"
+  - travis_retry docker build -t "$TRAVIS_REPO_SLUG" .
   - ~/official-images/test/run.sh "$TRAVIS_REPO_SLUG"
 
 after_success:

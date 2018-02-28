@@ -14,32 +14,31 @@
 
 FROM ubuntu:16.04
 
-ENV JIRA_OWNER                    "daemon"
-ENV JIRA_GROUP                    "daemon"
-ENV JIRA_HOME                     "/var/atlassian/application-data/jira"
-ENV JIRA_CATALINA                 "/opt/atlassian/jira"
-ENV JIRA_MINIMUM_MEMORY           "384m"
-ENV JIRA_MAXIMUM_MEMORY           "768m"
-ENV JIRA_SERVER_PORT              "8005"
-ENV JIRA_CONNECTOR_PORT           "8080"
-ENV JIRA_CONNECTOR_SCHEME         "http"
-ENV JIRA_CONNECTOR_SECURE         "false"
-ENV JIRA_CONNECTOR_PROXY_NAME     ""
-ENV JIRA_CONNECTOR_PROXY_PORT     ""
-ENV JIRA_CONTEXT_PATH             ""
-ENV JIRA_SUPPORT_RECOMMENDED_ARGS "-Datlassian.plugins.enable.wait=300"
-ENV JIRA_DOWNLOAD_URL             "https://downloads.atlassian.com/software/jira/downloads/atlassian-jira-core-7.8.0.tar.gz"
+ENV JIRA_OWNER                   "daemon"
+ENV JIRA_GROUP                   "daemon"
+ENV JIRA_HOME                    "/var/atlassian/application-data/jira"
+ENV JIRA_CATALINA                "/opt/atlassian/jira"
+ENV JIRA_DOWNLOAD_URL            "https://downloads.atlassian.com/software/jira/downloads/atlassian-jira-core-7.8.0.tar.gz"
 
-ENV JAVA_HOME                     "/usr/java/default"
-ENV JAVA_DOWNLOAD_URL             "http://download.oracle.com/otn-pub/java/jdk/8u162-b12/0da788060d494f5095bf8624735fa2f1/jre-8u162-linux-x64.rpm"
+ENV JAVA_HOME                    "/usr/java/default"
+ENV JAVA_DOWNLOAD_URL            "http://download.oracle.com/otn-pub/java/jdk/8u162-b12/0da788060d494f5095bf8624735fa2f1/jre-8u162-linux-x64.rpm"
 
-ENV DUMB_INIT_BIN_DIR             "/usr/local/bin"
-ENV DUMB_INIT_DOWNLOAD_URL        "https://github.com/Yelp/dumb-init/releases/download/v1.2.1/dumb-init_1.2.1_amd64"
+ENV DUMB_INIT_BIN_DIR            "/usr/local/bin"
+ENV DUMB_INIT_DOWNLOAD_URL       "https://github.com/Yelp/dumb-init/releases/download/v1.2.1/dumb-init_1.2.1_amd64"
+
+ENV JVM_MINIMUM_MEMORY           "384m"
+ENV JVM_MAXIMUM_MEMORY           "768m"
+ENV CATALINA_CONNECTOR_PROXYNAME ""
+ENV CATALINA_CONNECTOR_PROXYPORT ""
+ENV CATALINA_CONNECTOR_SCHEME    "http"
+ENV CATALINA_CONNECTOR_SECURE    "false"
+ENV CATALINA_CONTEXT_PATH        ""
+ENV JVM_SUPPORT_RECOMMENDED_ARGS "-Datlassian.plugins.enable.wait=300"
 
 VOLUME $JIRA_HOME
 WORKDIR $JIRA_HOME
 
-EXPOSE $JIRA_CONNECTOR_PORT $JIRA_SERVER_PORT
+EXPOSE 8080 8005
 
 ENTRYPOINT [ "/usr/local/bin/dumb-init", "--" ]
 CMD [ "/etc/init.d/jira", "start", "-fg" ]

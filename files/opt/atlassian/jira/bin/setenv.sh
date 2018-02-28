@@ -6,13 +6,13 @@ JIRA_HOME="${JIRA_HOME:-/var/atlassian/application-data/jira}"
 #
 #  Occasionally Atlassian Support may recommend that you set some specific JVM arguments.  You can use this variable below to do that.
 #
-JVM_SUPPORT_RECOMMENDED_ARGS="${JIRA_SUPPORT_RECOMMENDED_ARGS:-"-Datlassian.plugins.enable.wait=300"}"
+JVM_SUPPORT_RECOMMENDED_ARGS="${JVM_SUPPORT_RECOMMENDED_ARGS:-"-Datlassian.plugins.enable.wait=300"}"
 
 #
 # The following 2 settings control the minimum and maximum given to the JIRA Java virtual machine.  In larger JIRA instances, the maximum amount will need to be increased.
 #
-JVM_MINIMUM_MEMORY="${JIRA_MINIMUM_MEMORY:-384m}"
-JVM_MAXIMUM_MEMORY="${JIRA_MAXIMUM_MEMORY:-768m}"
+JVM_MINIMUM_MEMORY="${JVM_MINIMUM_MEMORY:-384m}"
+JVM_MAXIMUM_MEMORY="${JVM_MAXIMUM_MEMORY:-768m}"
 
 #
 # The following are the required arguments for JIRA.
@@ -34,7 +34,7 @@ JVM_REQUIRED_ARGS='-Djava.awt.headless=true -Datlassian.standalone=JIRA -Dorg.ap
 # Prevents the JVM from suppressing stack traces if a given type of exception
 # occurs frequently, which could make it harder for support to diagnose a problem.
 #-----------------------------------------------------------------------------------
-JVM_EXTRA_ARGS="-XX:-OmitStackTraceInFastThrow -Djira.connector.port=${JIRA_CONNECTOR_PORT:-8080} -Djira.server.port=${JIRA_SERVER_PORT:-8005} -Djira.connector.scheme=${JIRA_CONNECTOR_SCHEME:-http} -Djira.connector.secure=${JIRA_CONNECTOR_SECURE:-false} -Djira.connector.proxyName=${JIRA_CONNECTOR_PROXY_NAME:-} -Djira.connector.proxyPort=${JIRA_CONNECTOR_PROXY_PORT:-} -Djira.context.path=${JIRA_CONTEXT_PATH:-}"
+JVM_EXTRA_ARGS="-XX:-OmitStackTraceInFastThrow -Dcatalina.connector.scheme=${CATALINA_CONNECTOR_SCHEME:-http} -Dcatalina.connector.secure=${CATALINA_CONNECTOR_SECURE:-false} -Dcatalina.connector.proxyName=${CATALINA_CONNECTOR_PROXYNAME:-} -Dcatalina.connector.proxyPort=${CATALINA_CONNECTOR_PROXYPORT:-} -Dcatalina.context.path=${CATALINA_CONTEXT_PATH:-}"
 
 PRGDIR=`dirname "$0"`
 cat "${PRGDIR}"/jirabanner.txt

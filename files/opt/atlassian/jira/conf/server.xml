@@ -27,7 +27,7 @@
   See the License for the specific language governing permissions and
   limitations under the License.
 -->
-<Server port="${jira.server.port}" shutdown="SHUTDOWN">
+<Server port="8005" shutdown="SHUTDOWN">
     <Listener className="org.apache.catalina.startup.VersionLoggerListener" />
     <!-- Security listener. Documentation at /docs/config/listeners.html
     <Listener className="org.apache.catalina.security.SecurityListener" />
@@ -50,12 +50,12 @@
     -->
     <Service name="Catalina">
 
-        <Connector port="${jira.connector.port}"
+        <Connector port="8080"
 
-                   scheme="${jira.connector.scheme}"
-                   secure="${jira.connector.secure}"
-                   proxyName="${jira.connector.proxyName}"
-                   proxyPort="${jira.connector.proxyPort}"
+                   scheme="${catalina.connector.scheme}"
+                   secure="${catalina.connector.secure}"
+                   proxyName="${catalina.connector.proxyName}"
+                   proxyPort="${catalina.connector.proxyPort}"
 
                    maxThreads="150"
                    minSpareThreads="25"
@@ -120,7 +120,7 @@
         <Engine name="Catalina" defaultHost="localhost">
             <Host name="localhost" appBase="webapps" unpackWARs="true" autoDeploy="true">
 
-                <Context path="${jira.context.path}" docBase="${catalina.home}/atlassian-jira" reloadable="false" useHttpOnly="true">
+                <Context path="${catalina.context.path}" docBase="${catalina.home}/atlassian-jira" reloadable="false" useHttpOnly="true">
 
 
                     <!--

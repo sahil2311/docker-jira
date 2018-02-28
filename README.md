@@ -9,7 +9,7 @@ Docker Image Packaging for Atlassian JIRA
 
 JIRA Software unlocks the power of agile by giving your team the tools to easily create & estimate stories, build a sprint backlog, identify team commitments & velocity, visualize team activity, and report on your team's progress.
 
-Learn more about JIRA: <https://www.atlassian.com/software/jira>
+Learn more about JIRA: <a href="https://www.atlassian.com/software/jira">https://www.atlassian.com/software/jira</a>
 
 Overview
 --------
@@ -35,7 +35,7 @@ Start Atlassian JIRA Server:
         --volume /var/atlassian/application-data/jira:/var/atlassian/application-data/jira \
         alvistack/docker-jira
 
-**Success**. JIRA is now available on <http://localhost:8080>
+**Success**. JIRA is now available on <a href="http://localhost:8080">http://localhost:8080</a>
 
 Please ensure your container has the necessary resources allocated to it. We recommend 2GiB of memory allocated to accommodate both the application server and the git processes. See [Supported Platforms](https://confluence.atlassian.com/display/JIRA/Supported+Platforms) for further information.
 
@@ -125,11 +125,6 @@ Versioning
 
 The `latest` tag matches the most recent version of this repository. Thus using `alvistack/docker-jira:latest` or `alvistack/docker-jira` will ensure you are running the most up to date version of this image.
 
-Dependencies
-------------
-
-[requirements.yml](requirements.yml)
-
 License
 -------
 
@@ -140,6 +135,6 @@ Author Information
 ------------------
 
 -   Wong Hoi Sing Edison
-    -   <https://twitter.com/hswong3i>
-    -   <https://github.com/hswong3i>
+    -   <a href="https://twitter.com/hswong3i">https://twitter.com/hswong3i</a>
+    -   <a href="https://github.com/hswong3i">https://github.com/hswong3i</a>
 

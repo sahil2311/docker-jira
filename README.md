@@ -24,7 +24,7 @@ Volume permission is managed by entry scripts. To get started you can use a data
 Start Atlassian JIRA Server:
 
     # Pull latest image
-    docker pull alvistack/docker-jira
+    docker pull alvistack/jira
 
     # Run as detach
     docker run \
@@ -32,7 +32,7 @@ Start Atlassian JIRA Server:
         --name jira \
         --publish 8080:8080 \
         --volume /var/atlassian/application-data/jira:/var/atlassian/application-data/jira \
-        alvistack/docker-jira
+        alvistack/jira
 
 **Success**. JIRA is now available on <http://localhost:8080>
 
@@ -121,7 +121,7 @@ For evaluations you can use the built-in database that will store its files in t
 Versioning
 ----------
 
-The `latest` tag matches the most recent version of this repository. Thus using `alvistack/docker-jira:latest` or `alvistack/docker-jira` will ensure you are running the most up to date version of this image.
+The `latest` tag matches the most recent version of this repository. Thus using `alvistack/jira:latest` or `alvistack/jira` will ensure you are running the most up to date version of this image.
 
 License
 -------

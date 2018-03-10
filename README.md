@@ -4,7 +4,7 @@ Docker Image Packaging for Atlassian JIRA
 [![Travis](https://img.shields.io/travis/alvistack/docker-jira.svg)](https://travis-ci.org/alvistack/docker-jira)
 [![GitHub release](https://img.shields.io/github/release/alvistack/docker-jira.svg)](https://github.com/alvistack/docker-jira/releases)
 [![GitHub license](https://img.shields.io/github/license/alvistack/docker-jira.svg)](https://github.com/alvistack/docker-jira/blob/master/LICENSE)
-[![Docker Pulls](https://img.shields.io/docker/pulls/alvistack/docker-jira.svg)](https://hub.docker.com/r/alvistack/docker-jira/)
+[![Docker Pulls](https://img.shields.io/docker/pulls/alvistack/jira.svg)](https://hub.docker.com/r/alvistack/jira/)
 
 JIRA Software unlocks the power of agile by giving your team the tools to easily create & estimate stories, build a sprint backlog, identify team commitments & velocity, visualize team activity, and report on your team's progress.
 

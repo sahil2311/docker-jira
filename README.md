@@ -10,6 +10,12 @@ JIRA Software unlocks the power of agile by giving your team the tools to easily
 
 Learn more about JIRA: <https://www.atlassian.com/software/jira>
 
+Supported Tags and Respective `Dockerfile` Links
+------------------------------------------------
+
+-   [`latest` (master/Dockerfile)](https://github.com/alvistack/docker-jira/blob/master/Dockerfile)
+-   [`7.8` (7.8/Dockerfile)](https://github.com/alvistack/docker-jira/blob/7.8/Dockerfile)
+
 Overview
 --------
 

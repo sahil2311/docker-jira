@@ -35,7 +35,7 @@ WORKDIR $JIRA_HOME
 EXPOSE 8005
 EXPOSE 8080
 
-ENTRYPOINT [ "/usr/local/bin/dumb-init", "--" ]
+ENTRYPOINT [ "dumb-init", "--" ]
 CMD        [ "/etc/init.d/jira", "start", "-fg" ]
 
 # Prepare APT depedencies

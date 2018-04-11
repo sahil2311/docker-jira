@@ -1,6 +1,6 @@
 diff -urp a/opt/atlassian/jira/bin/setenv.sh b/opt/atlassian/jira/bin/setenv.sh
---- a/opt/atlassian/jira/bin/setenv.sh	2018-03-14 11:00:04.161461947 +0800
-+++ b/opt/atlassian/jira/bin/setenv.sh	2018-03-10 22:10:04.158403841 +0800
+--- a/opt/atlassian/jira/bin/setenv.sh	2018-04-11 18:12:12.953249348 +0800
++++ b/opt/atlassian/jira/bin/setenv.sh	2018-04-11 18:12:26.825374848 +0800
 @@ -1,18 +1,18 @@
  #
  # One way to set the JIRA HOME path is here via this variable.  Simply uncomment it and set a valid path like /jira/home.  You can of course set it outside in the command terminal.  That will also work.
@@ -78,26 +78,22 @@ diff -urp a/opt/atlassian/jira/bin/setenv.sh b/opt/atlassian/jira/bin/setenv.sh
  
  PUSHED_DIR=`pwd`
 diff -urp a/opt/atlassian/jira/conf/server.xml b/opt/atlassian/jira/conf/server.xml
---- a/opt/atlassian/jira/conf/server.xml	2018-03-14 11:00:15.929385373 +0800
-+++ b/opt/atlassian/jira/conf/server.xml	2018-03-10 22:10:04.158403841 +0800
-@@ -52,6 +52,11 @@
+--- a/opt/atlassian/jira/conf/server.xml	2018-04-11 18:12:01.589146745 +0800
++++ b/opt/atlassian/jira/conf/server.xml	2018-04-11 18:14:49.512927988 +0800
+@@ -33,6 +33,7 @@
  
-         <Connector port="8080"
+         <Connector port="8080" maxThreads="150" minSpareThreads="25" connectionTimeout="20000" enableLookups="false"
+                    maxHttpHeaderSize="8192" protocol="HTTP/1.1" useBodyEncodingForURI="true" redirectPort="8443"
++                   scheme="${catalina.connector.scheme}" secure="${catalina.connector.secure}" proxyName="${catalina.connector.proxyName}" proxyPort="${catalina.connector.proxyPort}"
+                    acceptCount="100" disableUploadTimeout="true" bindOnInit="false"/>
  
-+                   scheme="${catalina.connector.scheme}"
-+                   secure="${catalina.connector.secure}"
-+                   proxyName="${catalina.connector.proxyName}"
-+                   proxyPort="${catalina.connector.proxyPort}"
-+
-                    maxThreads="150"
-                    minSpareThreads="25"
-                    connectionTimeout="20000"
-@@ -115,7 +120,7 @@
+         <!--
+@@ -95,7 +96,7 @@
          <Engine name="Catalina" defaultHost="localhost">
              <Host name="localhost" appBase="webapps" unpackWARs="true" autoDeploy="true">
  
 -                <Context path="" docBase="${catalina.home}/atlassian-jira" reloadable="false" useHttpOnly="true">
 +                <Context path="${catalina.context.path}" docBase="${catalina.home}/atlassian-jira" reloadable="false" useHttpOnly="true">
- 
- 
-                     <!--
+                     <Resource name="UserTransaction" auth="Container" type="javax.transaction.UserTransaction"
+                               factory="org.objectweb.jotm.UserTransactionFactory" jotm.timeout="60"/>
+                     <Manager pathname=""/>

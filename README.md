@@ -14,7 +14,7 @@ Supported Tags and Respective `Dockerfile` Links
 ------------------------------------------------
 
 -   [`latest` (master/Dockerfile)](https://github.com/alvistack/docker-jira/blob/master/Dockerfile)
--   [`7.9` (7.9/Dockerfile)](https://github.com/alvistack/docker-jira/blob/7.9/Dockerfile)
+-   [`7.10` (7.10/Dockerfile)](https://github.com/alvistack/docker-jira/blob/7.10/Dockerfile)
 
 Overview
 --------

@@ -29,6 +29,7 @@ ENV CATALINA_CONNECTOR_SECURE    "false"
 ENV CATALINA_CONTEXT_PATH        ""
 ENV JVM_SUPPORT_RECOMMENDED_ARGS "-Datlassian.plugins.enable.wait=300"
 ENV TZ                           "UTC"
+ENV SESSION_TIMEOUT              "300"
 
 VOLUME  $JIRA_HOME
 WORKDIR $JIRA_HOME

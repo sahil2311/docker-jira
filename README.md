@@ -1,5 +1,4 @@
-Docker Image Packaging for Atlassian JIRA
-=========================================
+# Docker Image Packaging for Atlassian JIRA
 
 [![Travis](https://img.shields.io/travis/alvistack/docker-jira.svg)](https://travis-ci.org/alvistack/docker-jira)
 [![GitHub release](https://img.shields.io/github/release/alvistack/docker-jira.svg)](https://github.com/alvistack/docker-jira/releases)
@@ -10,21 +9,19 @@ JIRA Software unlocks the power of agile by giving your team the tools to easily
 
 Learn more about JIRA: <https://www.atlassian.com/software/jira>
 
-Supported Tags and Respective `Dockerfile` Links
-------------------------------------------------
+## Supported Tags and Respective `Dockerfile` Links
 
--   [`latest` (master/Dockerfile)](https://github.com/alvistack/docker-jira/blob/master/Dockerfile)
--   [`7.12` (7.12/Dockerfile)](https://github.com/alvistack/docker-jira/blob/7.12/Dockerfile)
--   [`7.11` (7.11/Dockerfile)](https://github.com/alvistack/docker-jira/blob/7.11/Dockerfile)
+  - [`latest` (master/Dockerfile)](https://github.com/alvistack/docker-jira/blob/master/Dockerfile)
+  - [`7.12` (7.12/Dockerfile)](https://github.com/alvistack/docker-jira/blob/7.12/Dockerfile)
+  - [`7.11` (7.11/Dockerfile)](https://github.com/alvistack/docker-jira/blob/7.11/Dockerfile)
 
-Overview
---------
+## Overview
 
 This Docker container makes it easy to get an instance of JIRA up and running.
 
 ### Quick Start
 
-For the `JIRA_HOME` directory that is used to store the repository data (amongst other things) we recommend mounting a host directory as a [data volume](https://docs.docker.com/engine/tutorials/dockervolumes/#/data-volumes), or via a named volume if using a docker version &gt;= 1.9.
+For the `JIRA_HOME` directory that is used to store the repository data (amongst other things) we recommend mounting a host directory as a [data volume](https://docs.docker.com/engine/tutorials/dockervolumes/#/data-volumes), or via a named volume if using a docker version \>= 1.9.
 
 Volume permission is managed by entry scripts. To get started you can use a data volume, or named volumes.
 
@@ -121,8 +118,7 @@ Default session timeout for Apache Tomcat
 
 Default: `300`
 
-Upgrade
--------
+## Upgrade
 
 To upgrade to a more recent version of JIRA Server you can simply stop the JIRA
 container and start a new one based on a more recent image:
@@ -136,26 +132,21 @@ be available after the upgrade.
 
 Note: Please make sure that you don't accidentally remove the jira container and its volumes using the -v option.
 
-Backup
-------
+## Backup
 
 For evaluations you can use the built-in database that will store its files in the JIRA Server home directory. In that case it is sufficient to create a backup archive of the directory on the host that is used as a volume (`/var/atlassian/application-data/jira` in the example above).
 
-Versioning
-----------
+## Versioning
 
 The `latest` tag matches the most recent version of this repository. Thus using `alvistack/jira:latest` or `alvistack/jira` will ensure you are running the most up to date version of this image.
 
-License
--------
+## License
 
--   Code released under [Apache License 2.0](LICENSE)
--   Docs released under [CC BY 4.0](http://creativecommons.org/licenses/by/4.0/)
+  - Code released under [Apache License 2.0](LICENSE)
+  - Docs released under [CC BY 4.0](http://creativecommons.org/licenses/by/4.0/)
 
-Author Information
-------------------
+## Author Information
 
--   Wong Hoi Sing Edison
-    -   <https://twitter.com/hswong3i>
-    -   <https://github.com/hswong3i>
-
+  - Wong Hoi Sing Edison
+      - <https://twitter.com/hswong3i>
+      - <https://github.com/hswong3i>

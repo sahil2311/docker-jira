@@ -29,7 +29,7 @@ Start Atlassian JIRA Server:
 
     # Pull latest image
     docker pull alvistack/jira
-
+    
     # Run as detach
     docker run \
         -itd \

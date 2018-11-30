@@ -1,6 +1,6 @@
 diff -urp a/opt/atlassian/jira/bin/setenv.sh b/opt/atlassian/jira/bin/setenv.sh
---- a/opt/atlassian/jira/bin/setenv.sh	2018-09-21 11:32:31.470177317 +0800
-+++ b/opt/atlassian/jira/bin/setenv.sh	2018-09-21 11:33:55.710679939 +0800
+--- a/opt/atlassian/jira/bin/setenv.sh	2018-11-28 18:21:24.000000000 +0800
++++ b/opt/atlassian/jira/bin/setenv.sh	2018-11-30 11:10:47.573949964 +0800
 @@ -1,18 +1,18 @@
  #
  # One way to set the JIRA HOME path is here via this variable.  Simply uncomment it and set a valid path like /jira/home.  You can of course set it outside in the command terminal.  That will also work.
@@ -23,8 +23,8 @@ diff -urp a/opt/atlassian/jira/bin/setenv.sh b/opt/atlassian/jira/bin/setenv.sh
 +JVM_MAXIMUM_MEMORY="${JVM_MAXIMUM_MEMORY:-768m}"
  
  #
- # The following are the required arguments for JIRA.
-@@ -34,7 +34,7 @@ JVM_REQUIRED_ARGS='-Djava.awt.headless=t
+ # The following setting configures the size of JVM code cache.  A high value of reserved size allows Jira to work with more installed apps.
+@@ -39,7 +39,7 @@ JVM_REQUIRED_ARGS='-Djava.awt.headless=t
  # Prevents the JVM from suppressing stack traces if a given type of exception
  # occurs frequently, which could make it harder for support to diagnose a problem.
  #-----------------------------------------------------------------------------------
@@ -33,7 +33,7 @@ diff -urp a/opt/atlassian/jira/bin/setenv.sh b/opt/atlassian/jira/bin/setenv.sh
  
  PRGDIR=`dirname "$0"`
  cat "${PRGDIR}"/jirabanner.txt
-@@ -43,12 +43,12 @@ JIRA_HOME_MINUSD=""
+@@ -48,12 +48,12 @@ JIRA_HOME_MINUSD=""
  if [ "$JIRA_HOME" != "" ]; then
      echo $JIRA_HOME | grep -q " "
      if [ $? -eq 0 ]; then
@@ -51,7 +51,7 @@ diff -urp a/opt/atlassian/jira/bin/setenv.sh b/opt/atlassian/jira/bin/setenv.sh
      fi
  fi
  
-@@ -77,16 +77,16 @@ fi
+@@ -82,16 +82,16 @@ fi
  export CATALINA_PID
  
  if [ -z "$CATALINA_BASE" ]; then
@@ -77,24 +77,24 @@ diff -urp a/opt/atlassian/jira/bin/setenv.sh b/opt/atlassian/jira/bin/setenv.sh
  fi
  
  PUSHED_DIR=`pwd`
-@@ -111,3 +111,5 @@ GC_JVM_PARAMETERS="-Xloggc:$LOGBASEABS/l
+@@ -116,3 +116,5 @@ GC_JVM_PARAMETERS="-Xloggc:$LOGBASEABS/l
  
  CATALINA_OPTS="${GC_JVM_PARAMETERS} ${CATALINA_OPTS}"
  export CATALINA_OPTS
 +
 +sed -i "s/\(<session-timeout>\).*\(<\/session-timeout>\)/\1${SESSION_TIMEOUT:-300}\2/g" ${JIRA_CATALINA}/atlassian-jira/WEB-INF/web.xml
 diff -urp a/opt/atlassian/jira/conf/server.xml b/opt/atlassian/jira/conf/server.xml
---- a/opt/atlassian/jira/conf/server.xml	2018-09-21 11:32:31.470177317 +0800
-+++ b/opt/atlassian/jira/conf/server.xml	2018-09-21 11:17:14.000000000 +0800
-@@ -33,6 +33,7 @@
- 
-         <Connector port="8080" maxThreads="150" minSpareThreads="25" connectionTimeout="20000" enableLookups="false"
+--- a/opt/atlassian/jira/conf/server.xml	2018-11-28 18:21:24.000000000 +0800
++++ b/opt/atlassian/jira/conf/server.xml	2018-11-30 11:10:47.573949964 +0800
+@@ -35,6 +35,7 @@
+         <Connector port="8080" relaxedPathChars="[]|" relaxedQueryChars="[]|{}^&#x5c;&#x60;&quot;&lt;&gt;"
+                    maxThreads="150" minSpareThreads="25" connectionTimeout="20000" enableLookups="false"
                     maxHttpHeaderSize="8192" protocol="HTTP/1.1" useBodyEncodingForURI="true" redirectPort="8443"
 +                   scheme="${catalina.connector.scheme}" secure="${catalina.connector.secure}" proxyName="${catalina.connector.proxyName}" proxyPort="${catalina.connector.proxyPort}"
                     acceptCount="100" disableUploadTimeout="true" bindOnInit="false"/>
  
          <!--
-@@ -95,7 +96,7 @@
+@@ -100,7 +101,7 @@
          <Engine name="Catalina" defaultHost="localhost">
              <Host name="localhost" appBase="webapps" unpackWARs="true" autoDeploy="true">
  

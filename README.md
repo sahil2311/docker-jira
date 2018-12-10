@@ -1,13 +1,13 @@
-# Docker Image Packaging for Atlassian JIRA
+# Docker Image Packaging for Atlassian Jira
 
 [![Travis](https://img.shields.io/travis/alvistack/docker-jira.svg)](https://travis-ci.org/alvistack/docker-jira)
 [![GitHub release](https://img.shields.io/github/release/alvistack/docker-jira.svg)](https://github.com/alvistack/docker-jira/releases)
 [![GitHub license](https://img.shields.io/github/license/alvistack/docker-jira.svg)](https://github.com/alvistack/docker-jira/blob/master/LICENSE)
 [![Docker Pulls](https://img.shields.io/docker/pulls/alvistack/jira.svg)](https://hub.docker.com/r/alvistack/jira/)
 
-JIRA Software unlocks the power of agile by giving your team the tools to easily create & estimate stories, build a sprint backlog, identify team commitments & velocity, visualize team activity, and report on your team's progress.
+Jira Software unlocks the power of agile by giving your team the tools to easily create & estimate stories, build a sprint backlog, identify team commitments & velocity, visualize team activity, and report on your team's progress.
 
-Learn more about JIRA: <https://www.atlassian.com/software/jira>
+Learn more about Jira: <https://www.atlassian.com/software/jira>
 
 ## Supported Tags and Respective `Dockerfile` Links
 
@@ -17,7 +17,7 @@ Learn more about JIRA: <https://www.atlassian.com/software/jira>
 
 ## Overview
 
-This Docker container makes it easy to get an instance of JIRA up and running.
+This Docker container makes it easy to get an instance of Jira up and running.
 
 ### Quick Start
 
@@ -25,7 +25,7 @@ For the `JIRA_HOME` directory that is used to store the repository data (amongst
 
 Volume permission is managed by entry scripts. To get started you can use a data volume, or named volumes.
 
-Start Atlassian JIRA Server:
+Start Atlassian Jira Server:
 
     # Pull latest image
     docker pull alvistack/jira
@@ -38,13 +38,13 @@ Start Atlassian JIRA Server:
         --volume /var/atlassian/application-data/jira:/var/atlassian/application-data/jira \
         alvistack/jira
 
-**Success**. JIRA is now available on <http://localhost:8080>
+**Success**. Jira is now available on <http://localhost:8080>
 
 Please ensure your container has the necessary resources allocated to it. We recommend 2GiB of memory allocated to accommodate both the application server and the git processes. See [Supported Platforms](https://confluence.atlassian.com/display/JIRA/Supported+Platforms) for further information.
 
 ### Memory / Heap Size
 
-If you need to override JIRA's default memory allocation, you can control the minimum heap (Xms) and maximum heap (Xmx) via the below environment variables.
+If you need to override Jira's default memory allocation, you can control the minimum heap (Xms) and maximum heap (Xmx) via the below environment variables.
 
 #### JVM\_MINIMUM\_MEMORY
 
@@ -60,7 +60,7 @@ Default: `768m`
 
 ### Reverse Proxy Settings
 
-If JIRA is run behind a reverse proxy server, then you need to specify extra options to make JIRA aware of the setup. They can be controlled via the below environment variables.
+If Jira is run behind a reverse proxy server, then you need to specify extra options to make Jira aware of the setup. They can be controlled via the below environment variables.
 
 #### CATALINA\_CONNECTOR\_PROXYNAME
 
@@ -70,13 +70,13 @@ Default: *NONE*
 
 #### CATALINA\_CONNECTOR\_PROXYPORT
 
-The reverse proxy's port number via which JIRA is accessed.
+The reverse proxy's port number via which Jira is accessed.
 
 Default: *NONE*
 
 #### CATALINA\_CONNECTOR\_SCHEME
 
-The protocol via which JIRA is accessed.
+The protocol via which Jira is accessed.
 
 Default: `http`
 
@@ -88,17 +88,17 @@ Default: `false`
 
 #### CATALINA\_CONTEXT\_PATH
 
-The context path via which JIRA is accessed.
+The context path via which Jira is accessed.
 
 Default: *NONE*
 
 ### JVM configuration
 
-If you need to pass additional JVM arguments to JIRA such as specifying a custom trust store, you can add them via the below environment variable
+If you need to pass additional JVM arguments to Jira such as specifying a custom trust store, you can add them via the below environment variable
 
 #### JVM\_SUPPORT\_RECOMMENDED\_ARGS
 
-Additional JVM arguments for JIRA
+Additional JVM arguments for Jira
 
 Default: `-Datlassian.plugins.enable.wait=300`
 
@@ -120,7 +120,7 @@ Default: `300`
 
 ## Upgrade
 
-To upgrade to a more recent version of JIRA Server you can simply stop the JIRA
+To upgrade to a more recent version of Jira Server you can simply stop the Jira
 container and start a new one based on a more recent image:
 
     docker stop jira
@@ -134,7 +134,7 @@ Note: Please make sure that you don't accidentally remove the jira container and
 
 ## Backup
 
-For evaluations you can use the built-in database that will store its files in the JIRA Server home directory. In that case it is sufficient to create a backup archive of the directory on the host that is used as a volume (`/var/atlassian/application-data/jira` in the example above).
+For evaluations you can use the built-in database that will store its files in the Jira Server home directory. In that case it is sufficient to create a backup archive of the directory on the host that is used as a volume (`/var/atlassian/application-data/jira` in the example above).
 
 ## Versioning
 

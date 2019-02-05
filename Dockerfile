@@ -14,8 +14,8 @@
 
 FROM ubuntu:18.04
 
-ENV JIRA_OWNER                   "daemon"
-ENV JIRA_GROUP                   "daemon"
+ENV JIRA_OWNER                   "jira"
+ENV JIRA_GROUP                   "jira"
 ENV JIRA_HOME                    "/var/atlassian/application-data/jira"
 ENV JIRA_CATALINA                "/opt/atlassian/jira"
 ENV JIRA_DOWNLOAD_URL            "https://product-downloads.atlassian.com/software/jira/downloads/atlassian-jira-core-7.13.1.tar.gz"

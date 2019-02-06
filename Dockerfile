@@ -40,6 +40,11 @@ EXPOSE 8080
 ENTRYPOINT [ "dumb-init", "--" ]
 CMD        [ "docker-entrypoint.sh" ]
 
+# Explicitly set system user UID/GID
+RUN set -ex \
+    && groupadd -r $JIRA_OWNER \
+    && useradd -r -g $JIRA_GROUP -d $JIRA_HOME -M -s /usr/sbin/nologin $JIRA_OWNER
+
 # Prepare APT depedencies
 RUN set -ex \
     && apt-get update \

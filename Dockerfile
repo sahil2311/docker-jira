@@ -18,7 +18,7 @@ ENV JIRA_OWNER                   "jira"
 ENV JIRA_GROUP                   "jira"
 ENV JIRA_HOME                    "/var/atlassian/application-data/jira"
 ENV JIRA_CATALINA                "/opt/atlassian/jira"
-ENV JIRA_DOWNLOAD_URL            "https://product-downloads.atlassian.com/software/jira/downloads/atlassian-jira-core-8.0.0.tar.gz"
+ENV JIRA_DOWNLOAD_URL            "https://product-downloads.atlassian.com/software/jira/downloads/atlassian-jira-core-8.0.1.tar.gz"
 ENV JAVA_HOME                    "/usr/lib/jvm/java-8-openjdk-amd64"
 ENV JVM_MINIMUM_MEMORY           "384m"
 ENV JVM_MAXIMUM_MEMORY           "768m"
@@ -45,7 +45,7 @@ RUN set -ex \
     && groupadd -r $JIRA_OWNER \
     && useradd -r -g $JIRA_GROUP -d $JIRA_HOME -M -s /usr/sbin/nologin $JIRA_OWNER
 
-# Prepare APT depedencies
+# Prepare APT dependencies
 RUN set -ex \
     && apt-get update \
     && DEBIAN_FRONTEND=noninteractive apt-get -y install build-essential curl git libffi-dev libssl-dev python python-dev \

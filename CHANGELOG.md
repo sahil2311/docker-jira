@@ -1,8 +1,15 @@
 # Docker Image Packaging for Atlassian JIRA
 
-## 8.1.0-0alvistackx - TBC
+## 8.1.1-0alvistackx - TBC
 
 ### Major Changes
+
+## 8.1.1-0alvistack2 - 2019-05-20
+
+### Major Changes
+
+  - Bugfix "Build times out because no output was received"
+  - Upgrade minimal Ansible support to 2.8.0
 
 ## 8.1.0-0alvistack2 - 2019-04-16
 

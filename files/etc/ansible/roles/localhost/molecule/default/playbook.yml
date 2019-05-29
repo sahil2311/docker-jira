@@ -31,7 +31,4 @@
         - { state: "latest", name: "openjdk-8-jdk" }
       java_home: "/usr/lib/jvm/java-8-openjdk-amd64"
     - role: jira
-      jira_download:
-        url: "{{ lookup('env','JIRA_DOWNLOAD_URL') }}"
-        dest: "{{ lookup('env','JIRA_DOWNLOAD_DEST') }}"
-        checksum: "{{ lookup('env','JIRA_DOWNLOAD_CHECKSUM') }}"
+      jira_version: "{{ lookup('env','JIRA_VERSION') }}"

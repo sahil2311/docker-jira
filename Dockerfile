@@ -14,7 +14,7 @@
 
 FROM ubuntu:18.04
 
-ENV JIRA_VRSION                  "8.1.1"
+ENV JIRA_VRSION                  "8.2.0"
 ENV JIRA_OWNER                   "jira"
 ENV JIRA_GROUP                   "jira"
 ENV JIRA_HOME                    "/var/atlassian/application-data/jira"

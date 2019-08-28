@@ -14,12 +14,12 @@
 
 FROM ubuntu:18.04
 
+ENV JAVA_VERSION                 "1.8.0"
 ENV JIRA_VERSION                 "8.3.3"
 ENV JIRA_OWNER                   "jira"
 ENV JIRA_GROUP                   "jira"
 ENV JIRA_HOME                    "/var/atlassian/application-data/jira"
 ENV JIRA_CATALINA                "/opt/atlassian/jira"
-ENV JAVA_HOME                    "/usr/lib/jvm/java-8-openjdk-amd64"
 ENV JVM_MINIMUM_MEMORY           "384m"
 ENV JVM_MAXIMUM_MEMORY           "768m"
 ENV CATALINA_CONNECTOR_PROXYNAME ""

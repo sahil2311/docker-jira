@@ -4,10 +4,11 @@
 
 ### Major Changes
 
-## 8.3.2-0alvistack3 - 2019-08-29
+## 8.3.3-0alvistack2 - 2019-08-29
 
 ### Major Changes
 
+  - Simplify parameters combination with `JAVA_VERSION`
   - Simplify parameters combination with `BAMBOO_VERSION`
   - Ensure required folders exist with correct owner:group
   - Prepend executable if command starts with an option

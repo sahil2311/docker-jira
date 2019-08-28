@@ -37,8 +37,8 @@ WORKDIR $JIRA_HOME
 EXPOSE 8005
 EXPOSE 8080
 
-ENTRYPOINT [ "dumb-init", "--" ]
-CMD        [ "docker-entrypoint.sh" ]
+ENTRYPOINT [ "dumb-init", "--", "docker-entrypoint.sh" ]
+CMD        [ "/opt/atlassian/jira/bin/start-jira.sh", "-fg" ]
 
 # Explicitly set system user UID/GID
 RUN set -ex \

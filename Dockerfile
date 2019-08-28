@@ -14,7 +14,7 @@
 
 FROM ubuntu:18.04
 
-ENV JIRA_VERSION                 "8.3.2"
+ENV JIRA_VERSION                 "8.3.3"
 ENV JIRA_OWNER                   "jira"
 ENV JIRA_GROUP                   "jira"
 ENV JIRA_HOME                    "/var/atlassian/application-data/jira"
@@ -37,8 +37,8 @@ WORKDIR $JIRA_HOME
 EXPOSE 8005
 EXPOSE 8080
 
-ENTRYPOINT [ "dumb-init", "--" ]
-CMD        [ "docker-entrypoint.sh" ]
+ENTRYPOINT [ "dumb-init", "--", "docker-entrypoint.sh" ]
+CMD        [ "/opt/atlassian/jira/bin/start-jira.sh", "-fg" ]
 
 # Explicitly set system user UID/GID
 RUN set -ex \

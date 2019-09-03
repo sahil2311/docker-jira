@@ -14,7 +14,7 @@
 
 FROM ubuntu:18.04
 
-ENV JAVA_VERSION                 "1.8.0"
+ENV JAVA_RELEASE                 "1.8.x"
 ENV JIRA_VERSION                 "8.3.3"
 ENV JIRA_OWNER                   "jira"
 ENV JIRA_GROUP                   "jira"

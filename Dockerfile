@@ -33,6 +33,7 @@ ENV CATALINA_CONNECTOR_SECURE    "false"
 ENV CATALINA_CONTEXT_PATH        "/"
 ENV JVM_SUPPORT_RECOMMENDED_ARGS "-Datlassian.plugins.enable.wait=300 -XX:+UnlockExperimentalVMOptions -XX:+UseCGroupMemoryLimitForHeap -XX:MaxRAMFraction=1"
 ENV SESSION_TIMEOUT              "300"
+ENV PATH                         "$PATH:JIRA_CATALINA/bin"
 
 VOLUME  $JIRA_HOME
 WORKDIR $JIRA_HOME
@@ -41,7 +42,7 @@ EXPOSE 8005
 EXPOSE 8080
 
 ENTRYPOINT [ "dumb-init", "--", "docker-entrypoint.sh" ]
-CMD        [ "/opt/atlassian/jira/bin/start-jira.sh", "-fg" ]
+CMD        [ "start-jira.sh", "-fg" ]
 
 # Hotfix for en_US.utf8 locale
 RUN set -ex \

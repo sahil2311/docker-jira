@@ -19,7 +19,7 @@ ENV LC_ALL "en_US.utf8"
 ENV SHELL  "/bin/bash"
 ENV TZ     "UTC"
 
-ENV JIRA_VERSION                 "8.5.0"
+ENV JIRA_VERSION                 "8.5.1"
 ENV JIRA_OWNER                   "jira"
 ENV JIRA_GROUP                   "jira"
 ENV JIRA_HOME                    "/var/atlassian/application-data/jira"

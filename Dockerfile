@@ -19,7 +19,7 @@ ENV LC_ALL "en_US.utf8"
 ENV SHELL  "/bin/bash"
 ENV TZ     "UTC"
 
-ENV JAVA_RELEASE                 "8"
+ENV OPENJDK_RELEASE              "8"
 ENV JIRA_VERSION                 "8.6.0"
 ENV JIRA_OWNER                   "jira"
 ENV JIRA_GROUP                   "jira"

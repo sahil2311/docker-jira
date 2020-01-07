@@ -14,7 +14,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-java_release: "{{ lookup('env', 'JAVA_RELEASE') }}"
+openjdk_release: "{{ lookup('env', 'OPENJDK_RELEASE') }}"
 jira_version: "{{ lookup('env','JIRA_VERSION') }}"
 jira_owner: "{{ lookup('env','JIRA_OWNER') }}"
 jira_group: "{{ lookup('env','JIRA_GROUP') }}"

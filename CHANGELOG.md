@@ -1,8 +1,16 @@
 # Docker Image Packaging for Atlassian JIRA
 
-## 8.5.0-XalvistackY - TBC
+## 8.6.1-XalvistackY - TBC
 
 ### Major Changes
+
+## 8.6.1-3alvistack1 - 2020-01-15
+
+### Major Changes
+
+  - Replace `dumb-init` with `tini`, as like as `docker --init`
+  - Replace `java` with `openjdk`
+  - Include release specific vars and tasks
 
 ## 8.5.0-2alvistack3 - 2019-11-05
 

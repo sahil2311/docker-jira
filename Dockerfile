@@ -42,7 +42,7 @@ WORKDIR $JIRA_HOME
 EXPOSE 8005
 EXPOSE 8080
 
-ENTRYPOINT [ "dumb-init", "--", "docker-entrypoint.sh" ]
+ENTRYPOINT [ "tini", "-g", "--", "docker-entrypoint.sh" ]
 CMD        [ "start-jira.sh", "-fg" ]
 
 # Hotfix for en_US.utf8 locale
